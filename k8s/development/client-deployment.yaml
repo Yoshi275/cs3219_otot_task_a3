@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: client
-          image: a2_client
-          imagePullPolicy: Never
+          image: yoshi275/cs3219_a2_client:latest
+          imagePullPolicy: Always
           ports:
           - containerPort: 80
