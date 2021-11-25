@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: client-deployment
+  name: web-deployment
   labels:
-    app: client
+    app: nginx
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      app: client
+      app: web-nginx
   template:
     metadata:
       labels:
-        app: client
+        app: web-nginx
     spec:
       containers:
-        - name: client
-          image: yoshi275/cs3219_a2_client:latest
+        - name: nginx
+          image: nginx:1.21.4 
           imagePullPolicy: Always
           ports:
-          - containerPort: 8080
+          - containerPort: 80
